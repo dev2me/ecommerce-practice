@@ -6,7 +6,7 @@ RSpec.describe "products/new", type: :view do
       :name => "MyString",
       :pricing => "9.99",
       :description => "MyText",
-      :user_id => nil
+      :user => nil
     ))
   end
 
@@ -21,7 +21,7 @@ RSpec.describe "products/new", type: :view do
 
       assert_select "textarea#product_description[name=?]", "product[description]"
 
-      assert_select "input#product_user_id_id[name=?]", "product[user_id_id]"
+      assert_select "input#product_user_id[name=?]", "product[user_id]"
     end
   end
 end
