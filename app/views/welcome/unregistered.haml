@@ -55,5 +55,5 @@
 				Vende tus libros electrónicos, tutoriales, canciones, comics, plantillas, fotografias de stock, archivos fuente, ¡Cualquier producto digital!
 .top-space.big-padding
 	.col-md-11.col-xs-12.center-block.no-float
-		= form_tag("/", method: :post) do
+		= form_tag(create_email_path, method: :post) do
 			= email_field_tag "email", nil, class: "col-xs-12 inline-block text-center landing-form", placeholder: "Escribe aqui tu email"
