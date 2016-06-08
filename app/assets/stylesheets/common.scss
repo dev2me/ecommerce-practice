@@ -23,6 +23,9 @@ $colors: (
 }
 
 /*Paddings*/
+.large-padding {
+	padding: 5px 10px;
+}
 .big-padding {
 	padding: 2em;
 }
@@ -32,6 +35,9 @@ $colors: (
 /*Margins*/
 .top-space {
 	margin-top: 1em!important;
+}
+.bottom-space {
+	margin-bottom: 2.3em!important;
 }
 /*Alineamientos*/
 .absolute {
