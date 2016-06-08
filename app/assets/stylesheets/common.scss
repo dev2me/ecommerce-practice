@@ -29,7 +29,14 @@ $colors: (
 .no-padding {
 	padding: 0;
 }
+/*Margins*/
+.top-space {
+	margin-top: 1em!important;
+}
 /*Alineamientos*/
+.absolute {
+	position: absolute;
+}
 .no-float {
 	float: none!important;
 }
@@ -42,6 +49,18 @@ $colors: (
 	vertical-align: middle;
 }
 /*Font Size*/
+.small {
+	font-size: 12px;
+}
+.medium {
+	font-size: 1.5em;
+}
+.big {
+	font-size: 3em;
+}
+.bigger {
+	font-size: 4em;
+}
 .ultra-big {
 	font-size: 7em;
 }
