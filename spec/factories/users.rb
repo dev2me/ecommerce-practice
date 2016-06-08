@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user_id do
+  factory :user do
     email "jesus@gruvel.com"
     password "12345678"
     password_confirmation "12345678"

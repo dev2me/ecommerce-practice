@@ -24,18 +24,20 @@ RSpec.describe ProductsController, type: :controller do
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: "Hola Mundo",
+      user: FactoryGirl.create(:user),
+      pricing: 1.0,
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: "",
+      pricing: 0
+    }
   }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProductsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
+  
   describe "GET #index" do
     it "assigns all products as @products" do
       product = Product.create! valid_attributes
