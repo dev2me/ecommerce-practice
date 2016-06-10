@@ -55,6 +55,7 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #new" do
+    login_user
     it "assigns a new product as @product" do
       get :new, {}
       expect(assigns(:product)).to be_a_new(Product)
@@ -62,6 +63,7 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET #edit" do
+    login_user
     it "assigns the requested product as @product" do
       product = Product.create! valid_attributes
       get :edit, {:id => product.to_param}
@@ -70,8 +72,8 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "POST #create" do
-    login_user
     context "with valid params" do
+      login_user
       it "creates a new Product" do
         expect {
           post :create, {:product => valid_attributes}
@@ -91,6 +93,7 @@ RSpec.describe ProductsController, type: :controller do
     end
 
     context "with invalid params" do
+      login_user
       it "assigns a newly created but unsaved product as @product" do
         post :create, {:product => invalid_attributes}
         expect(assigns(:product)).to be_a_new(Product)
@@ -101,19 +104,28 @@ RSpec.describe ProductsController, type: :controller do
         expect(response).to render_template("new")
       end
     end
+    context "without session" do
+      it "redirects to the login page" do
+        post :create, {:product => valid_attributes}
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
 
   describe "PUT #update" do
+    login_user
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: "Actualizado"
+        }
       }
 
       it "updates the requested product" do
         product = Product.create! valid_attributes
         put :update, {:id => product.to_param, :product => new_attributes}
         product.reload
-        skip("Add assertions for updated state")
+        expect(product.name).to eq("Actualizado")
       end
 
       it "assigns the requested product as @product" do
@@ -145,6 +157,7 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
+    login_user
     it "destroys the requested product" do
       product = Product.create! valid_attributes
       expect {
