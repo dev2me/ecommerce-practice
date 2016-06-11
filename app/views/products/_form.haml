@@ -1,4 +1,10 @@
 = form_for @product, builder: BootstrapFormBuilder do |f|
+	- if @product.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@product.errors.count, "errors")} prohibited this producto from being saved:"
+			%ul
+				- @product.errors.full_messages.each do |msg|
+					%li= msg
   = f.text_field :name
   = f.number_field :pricing
   = f.text_area :description
