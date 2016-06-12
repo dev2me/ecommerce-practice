@@ -10,7 +10,8 @@ $colors: (
 	blue: #058cc5,
 	red: #d2527f,
 	blue-light: #3498dd,
-	white: white
+	white: white,
+	teal: #009688
 );
 
 @each $color, $value in $colors {
@@ -22,6 +23,10 @@ $colors: (
 	}
 }
 
+/*Text*/
+.bold {
+	font-weight: bold; 
+}
 /*Paddings*/
 .large-padding {
 	padding: 5px 10px;
@@ -53,10 +58,14 @@ $colors: (
 	float: none!important;
 	display: inline-block;
 	vertical-align: middle;
+	margin-right: -4px;
 }
 /*Font Size*/
 .small {
 	font-size: 12px;
+}
+.normal {
+	font-size: 1.2em;
 }
 .medium {
 	font-size: 1.5em;
