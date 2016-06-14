@@ -15,3 +15,6 @@
 				Editar producto
 			= link_to @product, method: :delete, class: "gray-dark large-padding text-center col-md-4 inline-block", data: {confirm: "¿Deseas eliminar este producto?"} do
 				Eliminar producto
+		%div
+			%h3.gray-text Archivos
+			= render "attachments/form", product_id: @product.id
