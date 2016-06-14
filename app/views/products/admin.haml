@@ -1,0 +1,17 @@
+.col-md-3.no-padding.inline-block.in-top
+	%nav.medium
+		.green.white-text.col-md-12
+			Administrador General
+.col-md-9.inline-block
+	.card.large-padding
+		.col-md-9.inline-block
+			%h1= @product.name
+		.col-md-3.inline-block
+			%p.big.no-margin.red-text 10 usd
+		%nav.top-space
+			=link_to product_path(id: @product.id, client: true), class:"gray-dark large-padding text-center col-md-4 inline-block" do
+				Ver como el cliente
+			= link_to edit_product_path(@product), class: "gray-dark large-padding text-center col-md-4 inline-block" do
+				Editar producto
+			= link_to @product, method: :delete, class: "gray-dark large-padding text-center col-md-4 inline-block" do
+				Eliminar producto
