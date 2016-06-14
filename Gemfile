@@ -27,7 +27,11 @@ gem "bootstrap-sass"
 gem "bootstrap-material-design"
 gem "haml"
 gem "paperclip"
+# SDK Paypal
 gem "paypal-sdk-rest"
+
+#Anotate for models
+gem "annotate"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
