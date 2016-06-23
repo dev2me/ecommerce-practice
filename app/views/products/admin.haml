@@ -7,7 +7,7 @@
 		.col-md-9.inline-block
 			%h1= @product.name
 		.col-md-3.inline-block
-			%p.big.no-margin.red-text 10 usd
+			%p.medium.no-margin.red-text $#{@product.pricing}
 		%nav.top-space
 			=link_to product_path(id: @product.id, client: true), class:"gray-dark large-padding text-center col-md-4 inline-block" do
 				Ver como el cliente

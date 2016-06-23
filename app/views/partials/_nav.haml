@@ -1,0 +1,19 @@
+%header
+  %nav.green
+    %ul.no-padding.text-editor
+      %li.col-md-4.inline-block
+        -if user_signed_in?
+          =link_to root_path, class: "right-space white-text" do
+            %i.mdi-action-shopping-basket
+            Mi tienda
+          =link_to root_path, class: "right-space white-text" do
+            %i.mdi-action-trending-up
+            Órdenes
+          =link_to root_path, class: "right-space white-text" do
+            %i.mdi-action-alarm
+            Descuentos
+      %li.col-md-4.inline-block.text-center.tall-padding
+        =image_tag "tiendus.png", height: "25"
+      %li.col-md-4.inline-block
+        =link_to carrito_path, class: "white-text" do
+          Mi Carrito

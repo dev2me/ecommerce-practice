@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :attachments, only: [:create, :destroy, :new]
+  resources :in_shopping_carts, only:[:create, :destroy]
   resources :products
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post "/emails/create", as: :create_email
-
+  get "/carrito", to: "shopping_carts#show"
   authenticated :user do
     root "welcome#index"
   end
