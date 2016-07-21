@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :attachments, only: [:create, :destroy, :new]
   resources :in_shopping_carts, only:[:create, :destroy]
   resources :products
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   post "/emails/create", as: :create_email
+  post "/pagar", to: "payments#create"
+
   get "/carrito", to: "shopping_carts#show"
   get "/add/:product_id", as: :add_to_cart, to: "in_shopping_carts#create"
   authenticated :user do
